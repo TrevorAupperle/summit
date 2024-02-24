@@ -6,7 +6,7 @@ import {
   type NextAuthOptions,
 } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
-import Auth0Provider from "next-auth/providers/auth0";
+//import Auth0Provider from "next-auth/providers/auth0";
 import EmailProvider from "next-auth/providers/email";
 import CredentialsProvider from "next-auth/providers/credentials";
 
