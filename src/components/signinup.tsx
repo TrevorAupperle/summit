@@ -1,16 +1,17 @@
 import { signIn } from "next-auth/react";
 import Image from "next/image";
 import { useState } from "react";
+import { Icon } from "react-icons-kit";
+import { eyeOff } from "react-icons-kit/feather/eyeOff";
+import { eye } from "react-icons-kit/feather/eye";
 
-const imageLoader = ({}) => {
-  return `src/icons/SummitLogo.svg`;
-};
 export const SignInUp = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
+  const [icon, setIcon] = useState(eyeOff);
   return (
     <>
       <div className="bg-Summit-100 flex min-h-screen p-[48px]">
@@ -41,34 +42,62 @@ export const SignInUp = () => {
                 className="border-Gray-300 font my-2 rounded-[8px] border-[1px] px-3 py-2 font-noto text-[14px]"
                 placeholder="Username"
               />
-              <input
-                type={showPassword ? "text" : "password"}
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                className="border-Gray-300 font my-2 rounded-[8px] border-[1px] px-3 py-2 font-noto text-[14px] "
-                placeholder="Password"
-              />
+              <div className="border-Gray-300 my-2 flex gap-20 rounded-[8px] border-[1px] px-3 py-2">
+                <input
+                  type={showPassword ? "text" : "password"}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="border-hidden font-noto text-[14px] focus-within:outline-none "
+                  placeholder="Password"
+                />
+                <button
+                  type="button"
+                  aria-label={
+                    showPassword ? "Password Visible" : "Password Invisible."
+                  }
+                  className=" flex items-center justify-around pb-1"
+                  onClick={() => {
+                    setShowPassword((prev) => !prev);
+                    if (showPassword) {
+                      setIcon(eye);
+                    } else {
+                      setIcon(eyeOff);
+                    }
+                  }}
+                >
+                  <Icon className="absolute mr-10" icon={icon} size={25} />
+                </button>
+              </div>
+              <div className="border-Gray-300  my-2 flex gap-20 rounded-[8px] border-[1px] px-3 py-2">
+                <input
+                  type={showPassword ? "text" : "password"}
+                  value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                  className="flex border-hidden font-noto text-[14px] focus-within:outline-none"
+                  placeholder="Confirm Password"
+                />
+                <button
+                  type="button"
+                  aria-label={
+                    showPassword ? "Password Visible" : "Password Invisible."
+                  }
+                  className="flex h-5 w-5 items-center justify-around pb-1 "
+                  onClick={() => {
+                    setShowPassword((prev) => !prev);
+                    if (showPassword) {
+                      setIcon(eye);
+                    } else {
+                      setIcon(eyeOff);
+                    }
+                  }}
+                >
+                  <Icon className="absolute mr-10" icon={icon} size={25} />
+                </button>
+              </div>
+
               <button
                 type="button"
-                aria-label={
-                  showPassword ? "Password Visible" : "Password Invisible."
-                }
-                className="text-black font-noto text-[14px] underline"
-                onClick={() => {
-                  setShowPassword((prev) => !prev);
-                }}
-              >
-                {showPassword ? "Hide Password" : "Show Password"}
-              </button>
-              <input
-                type={showPassword ? "text" : "password"}
-                value={confirmPassword}
-                onChange={(e) => setConfirmPassword(e.target.value)}
-                className="border-Gray-300 font my-2 rounded-[8px] border-[1px] px-3 py-2 font-noto text-[14px] "
-                placeholder="Confirm Password"
-              />
-              <div
-                className="bg-blue-400 text-white w-max rounded-lg px-4 py-1 font-noto"
+                className="bg-Gray-300 text-Gray-400 my-2 flex items-center justify-center rounded-[8px] px-4 py-2 font-noto text-[14px] font-[600] leading-[20px]"
                 onClick={() => {
                   if (!username || !password || !email)
                     return alert("Please fill in all fields");
@@ -83,8 +112,8 @@ export const SignInUp = () => {
                   });
                 }}
               >
-                Sign up
-              </div>
+                Create account
+              </button>
             </div>
           </div>
         </div>
