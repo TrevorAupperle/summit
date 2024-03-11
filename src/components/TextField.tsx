@@ -38,18 +38,22 @@ export default function TextField({
   setInput,
   label,
   password = false,
+
   isValid = true,
   errorMessage = "",
   validate = false,
+
 }: {
   className?: string;
   input: string;
   setInput: Dispatch<SetStateAction<string>>;
   label: string;
   password?: boolean;
+
   isValid?: boolean;
   errorMessage?: string;
   validate?: boolean;
+
 }) {
   const [focused, setFocused] = useState(false);
   const [showPassword, setShowPassword] = useState(false);

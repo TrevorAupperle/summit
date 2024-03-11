@@ -14,8 +14,8 @@ export const SignInUp = () => {
   const [icon, setIcon] = useState(eyeOff);
   return (
     <>
-      <div className="flex min-h-screen bg-Summit-100 p-[48px]">
-        <div className="container flex max-w-sm flex-col rounded-lg bg-white px-[48px] py-[32px] shadow-lg">
+      <div className="bg-Summit-100 flex min-h-screen p-[48px]">
+        <div className="bg-white container flex max-w-sm flex-col rounded-lg px-[48px] py-[32px] shadow-lg">
           <Image
             className=" mb-[32px] flex flex-col  justify-center gap-2"
             src="/icons/SummitLogo.svg"
@@ -24,7 +24,7 @@ export const SignInUp = () => {
             height="100"
           />
           <div className="container">
-            <div className="mb-6 font-noto text-[20px] font-semibold text-Summit-700">
+            <div className="text-Summit-700 mb-6 font-noto text-[20px] font-semibold">
               Create an account
             </div>
             <div className=" flex flex-col  gap-2 font-noto text-[20px]">
@@ -32,17 +32,17 @@ export const SignInUp = () => {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className=" my-2 rounded-[8px] border-[1px] border-Gray-300 px-3 py-2 font-noto text-[14px] text-Gray-400"
+                className=" border-Gray-300 text-Gray-400 my-2 rounded-[8px] border-[1px] px-3 py-2 font-noto text-[14px]"
                 placeholder="Email"
               />
               <input
                 type="text"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
-                className="font my-2 rounded-[8px] border-[1px] border-Gray-300 px-3 py-2 font-noto text-[14px]"
+                className="border-Gray-300 font my-2 rounded-[8px] border-[1px] px-3 py-2 font-noto text-[14px]"
                 placeholder="Username"
               />
-              <div className="my-2 flex gap-20 rounded-[8px] border-[1px] border-Gray-300 px-3 py-2">
+              <div className="border-Gray-300 my-2 flex gap-20 rounded-[8px] border-[1px] px-3 py-2">
                 <input
                   type={showPassword ? "text" : "password"}
                   value={password}
@@ -68,7 +68,7 @@ export const SignInUp = () => {
                   <Icon className="absolute mr-10" icon={icon} size={25} />
                 </button>
               </div>
-              <div className="my-2  flex gap-20 rounded-[8px] border-[1px] border-Gray-300 px-3 py-2">
+              <div className="border-Gray-300  my-2 flex gap-20 rounded-[8px] border-[1px] px-3 py-2">
                 <input
                   type={showPassword ? "text" : "password"}
                   value={confirmPassword}
@@ -97,7 +97,7 @@ export const SignInUp = () => {
 
               <button
                 type="button"
-                className="my-2 flex items-center justify-center rounded-[8px] bg-Gray-300 px-4 py-2 font-noto text-[14px] font-[600] leading-[20px] text-Gray-400"
+                className="bg-Gray-300 text-Gray-400 my-2 flex items-center justify-center rounded-[8px] px-4 py-2 font-noto text-[14px] font-[600] leading-[20px]"
                 onClick={() => {
                   if (!username || !password || !email)
                     return alert("Please fill in all fields");

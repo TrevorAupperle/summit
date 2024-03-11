@@ -64,6 +64,7 @@ export default function LoginCarousel() {
       </Carousel>
       <div className="flex flex-col gap-2 pb-8">
         <h2 className="min-h-24 text-4xl font-semibold text-summit-900">
+
           {headerText[current - 1]}
         </h2>
         <div className="flex items-center gap-2">
@@ -71,6 +72,7 @@ export default function LoginCarousel() {
             className={classNames(
               "h-2 rounded-lg transition-all duration-300",
               current === 1 ? "w-12 bg-summit-900" : "w-6 bg-white",
+
             )}
             onClick={() => {
               if (api) {
@@ -93,6 +95,7 @@ export default function LoginCarousel() {
             className={classNames(
               "h-2 rounded-lg transition-all duration-300",
               current === 3 ? "w-12 bg-summit-900" : "w-6 bg-white",
+
             )}
             onClick={() => {
               if (api) {
