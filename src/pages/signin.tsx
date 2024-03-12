@@ -239,7 +239,7 @@ export default function Signin() {
             <button
               className="flex justify-center gap-3 rounded-lg border border-gray-300 p-2 text-sm font-semibold hover:border-gray-400"
               onClick={() =>
-                signIn("google", { redirect: true, callbackUrl: "/" })
+                signIn("google", { redirect: true, callbackUrl: "/dashboard" })
               }
             >
               <Image
@@ -420,7 +420,7 @@ export default function Signin() {
                   password: newPassword,
                   email: email,
                   redirect: true,
-                  callbackUrl: "/",
+                  callbackUrl: "/dashboard",
                 })
               }
             >
@@ -434,7 +434,7 @@ export default function Signin() {
             <button
               className="flex justify-center gap-3 rounded-lg border border-gray-300 p-2 text-sm font-semibold hover:border-gray-400"
               onClick={() =>
-                signIn("google", { redirect: true, callbackUrl: "/" })
+                signIn("google", { redirect: true, callbackUrl: "/dashboard" })
               }
             >
               <Image

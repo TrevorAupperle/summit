@@ -49,12 +49,6 @@ export default function Home() {
             </p>
             <AuthShowcase />
             <Link
-              href="/signup"
-              className="rounded-full bg-white bg-opacity-10 px-10 py-3  font-semibold text-white hover:bg-opacity-20"
-            >
-              Signup
-            </Link>
-            <Link
               href="/profile"
               className="rounded-full bg-white bg-opacity-10 px-10 py-3  font-semibold text-white hover:bg-opacity-20"
             >
