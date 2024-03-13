@@ -2,6 +2,7 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import TextField from "~/components/TextField";
+import { ScrollArea } from "~/components/shadcn/ui/scrollarea";
 
 export default function Dashboard() {
   const router = useRouter();
@@ -34,10 +35,14 @@ export default function Dashboard() {
             Join Organization
           </button>
         </div>
-        <div className="flex flex-col border-b border-gray-300 pb-4">
+        <div className="flex flex-col self-stretch border-b border-gray-300 pb-4">
           <h3 className="text-xl font-semibold text-summit-700">
             Recent Activity & Announcements
           </h3>
+          <ScrollArea className=" mb-20  rounded-md p-4">
+            Recent Activity and announcements to go here.
+            <br />
+          </ScrollArea>
         </div>
         <div className="flex flex-col border-b border-gray-300 pb-4">
           <h3 className="text-xl font-semibold text-summit-700">
